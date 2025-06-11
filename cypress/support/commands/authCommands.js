@@ -1,7 +1,6 @@
 
-Cypress.Commands.add('loginViaAPI', (username, password) => {
-  cy.request('POST', '/login', { username, password }).then((res) => {
-    expect(res.status).to.eq(200);
-    cy.setCookie('token', res.body.token);
-  });
+Cypress.Commands.add('reqresLogin', (email, password) => {
+  cy.request('POST', 'https://reqres.in/api/login', { email, password })
+    .its('body.token')
+    .then(token => cy.wrap(token).as('token'));
 });

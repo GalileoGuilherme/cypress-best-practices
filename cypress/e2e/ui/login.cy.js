@@ -1,21 +1,11 @@
 /// <reference types="cypress" />
 
-describe('Login via UI', () => {
-  beforeEach(() => {
-    cy.visit('/login');
-  });
-
-  it('deve realizar login com sucesso usando a UI', () => {
-    cy.get('input[name="username"]').type('teste');
-    cy.get('input[name="password"]').type('senha123');
-    cy.get('button[type="submit"]').click();
-
-    cy.contains('Bem-vindo').should('be.visible');
-  });
-
-  it('deve visitar uma página protegida após login via API', () => {
-    cy.loginViaAPI('teste', 'senha123');
-    cy.visit('/dashboard');
-    cy.contains('Painel do Usuário').should('be.visible');
+describe('SauceDemo UI Login', () => {
+  it('faz login com usuário válido', () => {
+    cy.visit('https://www.saucedemo.com/');
+    cy.get('#user-name').type('standard_user');
+    cy.get('#password').type('secret_sauce');
+    cy.get('#login-button').click();
+    cy.get('.inventory_list').should('be.visible');
   });
 });
