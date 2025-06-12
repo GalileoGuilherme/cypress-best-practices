@@ -20,7 +20,13 @@ jobs:
           node-version: 18
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
+
+      - name: Instalar Cypress binário
+        run: npx cypress install
+
+      - name: Verificar instalação do Cypress
+        run: npx cypress verify
 
       - name: Rodar testes Cypress com Dashboard
         run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
