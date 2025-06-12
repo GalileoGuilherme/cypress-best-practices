@@ -1,39 +1,26 @@
 name: Cypress Tests
 
 on:
-#   push:
-#     branches: [main]
-#   pull_request:
-#     branches: [main]
-    push:
-        branches: ["**"]
-    pull_request:
-        branches: ["**"]
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
 
 jobs:
-  run-cypress:
+  cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do projeto de testes
-        uses: actions/checkout@v4
+      - name: Checkout código
+        uses: actions/checkout@v3
 
-      - name: Instalação do Node.js
-        uses: actions/setup-node@v4
+      - name: Instalar Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
 
       - name: Instalar dependências
-        run: npm ci
+        run: npm install
 
-      - name: Rodar testes do Cypress
-        run: npx cypress run
-
-      - name: Publicar vídeos/screenshots se houver erro
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: cypress-artifacts
-          path: |
-            cypress/videos
-            cypress/screenshots
+      - name: Rodar testes Cypress com Dashboard
+        run: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
