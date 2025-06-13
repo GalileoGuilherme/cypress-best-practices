@@ -18,5 +18,7 @@
 import './commands/apiCommands'
 import './commands/registerCommands'
 import './commands/viewports'
+import 'cypress-plugin-api'
+
 
 
