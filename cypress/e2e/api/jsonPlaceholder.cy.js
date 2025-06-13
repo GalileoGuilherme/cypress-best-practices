@@ -5,6 +5,7 @@ describe('Testes de API - JSONPlaceholder', () => {
     it('Deve retornar lista de posts', () => {
       cy.getPosts()
         .then((response) => {
+          // cy.log(response.body)
           expect(response.status).to.eq(200)
           expect(response.body).to.be.an('array')
           expect(response.body[0]).to.have.keys(
