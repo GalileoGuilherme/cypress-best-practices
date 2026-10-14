@@ -6,9 +6,9 @@
 ## 📦 Pré-requisitos
 
 Antes de começar, certifique-se de ter instalado em sua máquina:
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/)
-- Um editor de código, como o [VSCode](https://code.visualstudio.com/)
+- Git
+- Node.js
+- Um editor de código, como o VSCode
 
 ## 🗂 Estrutura do projeto
 
@@ -64,7 +64,7 @@ npm run cypress:run
 * Utilização de seletores resilientes e isolados (ex: atributos customizados `data-testid`).
 * Organização de testes limpos e legíveis evitando acoplamentos excessivos.
 * Boas práticas em requisições de API integradas aos fluxos de UI.
-* Gerenciamento eficiente de massa de dados e interceptação de rede (*cy.intercept*).
+* Gerenciamento eficiente de massa de dados e interceptação de rede (`cy.intercept`).
 
 ## ⚡ Objetivo
 
@@ -78,8 +78,4 @@ Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais deta
 
 Desenvolvido por **Galileo Guilherme**
 
-[LinkedIn](https://www.linkedin.com/in/galileo-guilherme-silva-01996693/) • [GitHub](https://github.com/GalileoGuilherme) • Email: galileoguilhermeqa@gmail.com
-
-```
-
-```
+LinkedIn • GitHub • Email: galileoguilhermeqa@gmail.com
